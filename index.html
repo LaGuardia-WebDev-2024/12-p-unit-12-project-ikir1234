@@ -6,13 +6,12 @@ Requirements
 [  ] Include Three Images
 
 Select ONE Additional 
-[ no ] Feature 1 - Use .addClass() method
+[ yes ] Feature 1 - Use .addClass() method
 [ no ] Feature 2 - Use a variable in javaScript 
 [ no ] Feature 3 - Use .mouseover() method
 [ no ] Feature 4 - Use .show() method
 [ no ] Feature 5 - Use .append() method
 -->
-
 
 <!DOCTYPE html>
 <html>
@@ -20,42 +19,94 @@ Select ONE Additional
     <meta charset="utf-8" />
     <title>Unit 12 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      p {
+        font-size: 20px;
+      }
+      h3 {
+        font-size: 30px;
+      }
+      h1 {
+        font-size: 40px;
+      }
+      body {
+        background-color: turquoise
+      }
+      html {
+        background-color: teal
+      }
+    </style>
   </head>
   <body>
-    <button id="mem1-button">Memory #1</button>
-    <button id="mem2-button">Memory #2</button>
-    <button id="mem3-button">Memory #3</button>
-    <h1>My Top 3 Memories of <span>This Year</span></h1>
+    <button id="mem1-button">Player #1</button>
+    <button id="mem2-button">Player #2</button>
+    <button id="mem3-button">Player #3</button>
+    <h1 class="MLB">My Top 3 Favorite Memories <span>This Year</span></h1>
     <ol>
       <li>
-        <h3 id="mem1">Memory #1</h3>
-        <p>More about this memory.</p>
+        <h3 id="mem1">Player #1</h3>
+        <p id="mem1-paragraph"></p>
+        <img id="Kristian-Campbell" />
       </li>
 
       <li>
-        <h3 id="mem2">Memory #2</h3>
-        <p>More about this memory.</p>
+        <h3 id="mem2">Player #2</h3>
+        <p id="mem2-paragraph"></p>
+        <img id="Kyle-Tucker" />
       </li>
 
       <li>
-        <h3 id="mem3">Memory #3</h3>
-        <p>More about this memory</p>
+        <h3 id="mem3">Player #3</h3>
+        <p id="mem3-paragraph"></p>
+        <img id="Wilyer-Abreu" />
       </li>
     </ol>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
+      $(".MLB").text("My Top 3 Favorite Players in the MLB (so far)");
       $("#mem1-button").click(function () {
-        $("#mem1").css("color", "purple");
+        $("#mem1").css("color", "red");
+        $("#mem1").text("Kristian Campbell");
+        $("#Kristian-Campbell").attr(
+          "src",
+          "https://www.masslive.com/resizer/v2/PKJL4YZ2UJDRLIZ2WINDNUPLLU.jpg?auth=c01612576cc3ae8f80a99a5d9d5f606850141f0d50730d737925f9a413cffe13&width=500&quality=90"
+        );
+        $("#mem1-paragraph").text(
+          "22 year old rookie for the Boston Red Sox, Kristian Campbell has proved to be worth the hype. He started off the season hot with hitting his first basehit of his career in his first career game in Texas and eventually scored with Wilyer Abreu's three-run homer, with Boston winning that game in a come-from-behind fashion."
+        );
       });
 
       $("#mem2-button").click(function () {
         $("#mem2").css("color", "blue");
+        $("#mem2").text("Kyle Tucker");
+        $("#Kyle-Tucker").attr(
+          "src",
+          "https://media.zenfs.com/en/athlon_sports_articles_610/6477994c306d4212706fd40801cd2178"
+        );
+        $("#mem2-paragraph").text(
+          "Kyle Tucker, or King Tuck, acquried from the Chicago Cubs this offseason has proved to be one of MLBs best hitter this season. After being overshadowed by talent such as Yordan Alvarez on the Houston Astros, Tucker now has the chance to shine as a star on this star-studded team that have a legitimate chance to make the playoffs this season."
+        );
       });
 
       $("#mem3-button").click(function () {
-        $("#mem3").css("color", "green");
+        $("#mem3").css("color", "gray");
+        $("#mem3").text("Wilyer Abreu");
+        $("#Wilyer-Abreu").attr(
+          "src",
+          "https://www.bostonherald.com/wp-content/uploads/2024/04/AP24115036248485.jpg?w=1024"
+        );
+        $("#mem3-paragraph").text(
+          "After winning the Gold Glove award as a rookie, 25 year old right fielder Wilyer Abreu for the Boston Red Sox has been a suprising boost to their lineup, starting the season off with a hot start."
+        );
       });
+      $("h1").css("color", "navy");
+      var newSeason = $("<p>");
+      newSeason.text(
+        "Yes, we are still only about a month in the season, with still about 130-140 games left to play. However, I definitely think that these three players will really have a big influence on how well their teams will do for the rest of the season."
+      );
+      newSeason.addClass("2025season");
+      $("body").append(newSeason);
     </script>
   </body>
 </html>
